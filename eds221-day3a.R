@@ -221,6 +221,20 @@ for (i in seq_along(penguins)) {
 }
 
 
+# Functional programming
+
+# apply() function iterates over columns or rows
+
+# rewrite our for loop for finding mean values of the columns in mtcars
+# In Margin argument, 1 is for rows 2 is for columns
+apply(X = mtcars, MARGIN = 2, FUN = mean)
+# same as saying apply the function mean across the columns in mtcars
+
+library(tidyverse)
+
+penguins %>% 
+  group_by(species) %>% 
+  summarise(across(where(is.numeric), mean, na.rm = TRUE))
 
 
 
