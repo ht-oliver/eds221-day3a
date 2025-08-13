@@ -193,5 +193,35 @@ for (i in seq_along(tigers)) {
   big_cats[i] <- total_cats}
 big_cats
 
+#____ 10 min break, INTERACTIVE SESSION 2 ____
+
+# for loops to iterate across columns of data frame
+
+# create vector to store values
+mean_mtcars <- vector(mode = "numeric", length = ncol(mtcars))
+
+for (i in 1:ncol(mtcars)) {
+  mean_val <- mean(mtcars[[i]], na.rm = TRUE)
+  mean_mtcars[i] <- mean_val
+}
+
+mean_mtcars
+
+# A for loop for over columns with a condition
+
+library(palmerpenguins)
+
+for (i in seq_along(penguins)) {
+  if (is.numeric(penguins[[i]])) {
+    penguin_median <- median(penguins[[i]], na.rm = TRUE)
+    print(penguin_median)
+  } else {
+    print("data not numeric")
+  } 
+}
+
+
+
+
 
 
